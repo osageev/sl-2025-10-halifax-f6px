@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>SmartLooper Live — Attendee Hub</title>
+  <style>
+    :root{
+      --bg:#0f1115;--fg:#e8e8ea;--muted:#b0b3b8;--accent:#7c5cff;--accent2:#00d1b2;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font:16px/1.4 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#0f1115,#121420 40%,#0f1115);color:var(--fg);display:flex;align-items:center;justify-content:center;padding:24px}
+    .wrap{max-width:720px;width:100%}
+    .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:28px 24px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+    h1{margin:0 0 8px;font-size:28px;font-weight:800;letter-spacing:.3px}
+    p.lead{margin:0 0 22px;color:var(--muted);font-size:15px}
+    .btns{display:grid;grid-template-columns:1fr;gap:12px;margin:16px 0 8px}
+    .btn{display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;padding:18px 16px;border-radius:14px;border:2px solid transparent;font-weight:700}
+    .btn.primary{background:var(--accent);color:#fff}
+    .btn.secondary{background:transparent;color:var(--fg);border-color:rgba(255,255,255,.18)}
+    .btn.small{font-weight:600;padding:12px 14px;border-radius:12px}
+    .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .pill{padding:8px 10px;border-radius:999px;background:rgba(255,255,255,.06);color:var(--muted);font-size:13px}
+    .foot{margin-top:18px;color:var(--muted);font-size:12px}
+    .brand{font-weight:800;color:#fff}
+    .note{font-size:13px;color:var(--muted);margin-top:14px}
+    .attribution{margin-top:10px;font-size:12px;color:var(--muted)}
+    @media(min-width:560px){.btns{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card" role="region" aria-labelledby="title">
+      <h1 id="title">SmartLooper Live — Attendee Hub</h1>
+      <p class="lead">Thanks for coming! Two quick actions below — each takes ~30 seconds.</p>
+
+      <div class="btns">
+        <!-- 1) Contact + Feedback form -->
+        <a class="btn primary" id="contactFeedback" href="https://forms.gle/q7hZzuEkbpjzFkWP9" target="_blank" rel="noopener">Share contact info & quick feedback</a>
+        <!-- 2) Video sharing (direct upload portal) -->
+        <a class="btn secondary" id="videoUpload" href="https://www.dropbox.com/request/9kM7KdhUNokETcTmhL7W" target="_blank" rel="noopener">Share your event video (upload here)</a>
+      </div>
+
+      <div class="row" aria-label="Social hashtag and handle">
+        <span class="pill">Hashtag: <strong>#SmartLooperLive</strong></span>
+        <span class="pill">Tag: <strong>@YourHandle</strong></span>
+      </div>
+
+      <p class="note">Only upload content you created and have permission to share. If your video shows someone else, please make sure they’re okay with it first.</p>
+
+      <div class="foot">
+        <div>Questions? Chat with us at the booth or email <a href="mailto:you@example.com">you@example.com</a>.</div>
+        <div class="attribution">Tip: Save this page as a QR code on your signage so folks can find everything fast.</div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Optional: UTM passthrough so you can see source scans in form/file request
+    const qs = location.search; if(qs){
+      for(const id of ['contactFeedback','videoUpload']){
+        const a=document.getElementById(id); if(a) a.href += (a.href.includes('?')?'&':'?') + qs.slice(1);
+      }
+    }
+  </script>
+</body>
+</html>
